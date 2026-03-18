@@ -8899,7 +8899,7 @@ function BeeSwarmSimulator(DATA){
         
         tropicalDrink:{
             
-            amount:0,u:128*5/2048,v:128*3/2048,value:22,
+            amount:100,u:128*5/2048,v:128*3/2048,value:22,
             use:function(){
 
                 for(let i in player.effects){
@@ -8918,7 +8918,7 @@ function BeeSwarmSimulator(DATA){
         
         purplePotion:{
             
-            amount:0,u:128*6/2048,v:128*3/2048,value:95,
+            amount:100,u:128*6/2048,v:128*3/2048,value:95,
             use:function(){
 
                 for(let i in player.effects){
@@ -8955,7 +8955,7 @@ function BeeSwarmSimulator(DATA){
         
         superSmoothie:{
             
-            amount:0,u:128*7/2048,v:128*3/2048,value:120,
+            amount:100,u:128*7/2048,v:128*3/2048,value:120,
             use:function(){
 
                 for(let i in player.effects){
@@ -9075,7 +9075,7 @@ function BeeSwarmSimulator(DATA){
                 
                 return slot.type!==null
             },
-            amount:0,u:128*7/2048,v:128*12/2048,value:10,
+            amount:100,u:128*7/2048,v:128*12/2048,value:10,
             use:function(){
                 feedTreat({
                     type:'moonCharm',
@@ -9105,7 +9105,7 @@ function BeeSwarmSimulator(DATA){
                 
                 return slot.type!==null
             },
-            amount:0,u:128*1/2048,v:128*13/2048,value:500,
+            amount:100,u:128*1/2048,v:128*13/2048,value:500,
             use:function(){
                 feedTreat({
                     type:'starTreat',
@@ -9125,7 +9125,7 @@ function BeeSwarmSimulator(DATA){
                 
                 return slot.type!==null
             },
-            amount:0,u:128*2/2048,v:128*13/2048,value:40,
+            amount:100,u:128*2/2048,v:128*13/2048,value:40,
             use:function(){
                 feedTreat({
                     type:'atomicTreat',
@@ -9231,7 +9231,7 @@ function BeeSwarmSimulator(DATA){
             amount:0,u:128*4/2048,v:128*5/2048,value:60,
             use:function(){
                 
-                items.basicEgg.amount--
+                items.basicEgg.amount++
                 player.hive[player.hiveIndex[1]][player.hiveIndex[0]].type='basic'
                 player.hive[player.hiveIndex[1]][player.hiveIndex[0]].gifted=Math.random()<1/100
                 
@@ -9567,7 +9567,7 @@ function BeeSwarmSimulator(DATA){
                 
                 return true
             },
-            amount:0,u:128*0/2048,v:128*9/2048,value:375,
+            amount:10,u:128*0/2048,v:128*9/2048,value:375,
             use:function(){
                 
                 let types=[]
@@ -9582,7 +9582,7 @@ function BeeSwarmSimulator(DATA){
                 
                 type=types[(Math.random()*types.length)|0]
                 
-                items.giftedMythicEgg.amount--
+                items.giftedMythicEgg.amount++
                 player.hive[player.hiveIndex[1]][player.hiveIndex[0]].type=type
                 player.hive[player.hiveIndex[1]][player.hiveIndex[0]].gifted=true
                 
@@ -9601,7 +9601,7 @@ function BeeSwarmSimulator(DATA){
                 
                 return true
             },
-            amount:0,u:128*1/2048,v:128*9/2048,value:350,
+            amount:10,u:128*1/2048,v:128*9/2048,value:350,
             use:function(){
                 
                 let types=[],alreadyGot=[]
@@ -9624,7 +9624,7 @@ function BeeSwarmSimulator(DATA){
                 
                 type=types[(Math.random()*types.length)|0]
                 
-                items.starEgg.amount--
+                items.starEgg.amount++
                 player.hive[player.hiveIndex[1]][player.hiveIndex[0]].type=type
                 player.hive[player.hiveIndex[1]][player.hiveIndex[0]].gifted=true
                 
