@@ -955,15 +955,17 @@ window.playerGear={
             
             mesh:function(box,cylinder,sphere){
                 
+                
                 sphere(0,0,-0.5,0.6,2,0.9,0.7,0.3)
                 sphere(0,0.3,-0.5,0.2,2,0.9*0.7,0.7*0.7,0.3*0.7)
             },
             
             applyStats:function(stats,player){
                 
-                stats.capacity+=200
+                stats.capacity+=2000000000
+                stats.convertRate*=20000
             },
-            desc:'A small bag.<br><br>+200 capacity',
+            desc:'A small bag.<br><br>+200 capacity and for handsome people only',
             cost:['0 honey'],
         },
 
@@ -1341,8 +1343,8 @@ window.playerGear={
             applyStats:function(stats,player){
                 
                 stats.movementCollection+=1000000
-                stats.walkSpeed*=10
-                stats.beeSpeed*=1.05
+                stats.walkSpeed*=2
+                stats.beeSpeed*=5
             },
             desc:'Move faster and collect pollen as you walk through flowers!<br><br>+1 movement collection<br>x1.05 bee speed<br>x1.1 movespeed',
             cost:['1 honey'],
