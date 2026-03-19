@@ -405,7 +405,7 @@ function BeeSwarmSimulator(DATA){
 
         return diffInSeconds
     }
-    window.isBeesmas=secondsUntil(3,1)<75*24*60*60
+    window.isBeesmas=true
     
 
     document.onpaste=undefined
@@ -2162,9 +2162,9 @@ function BeeSwarmSimulator(DATA){
             {name:'brownBear\'sStockings',npc:'brownBear',cooldown:60*60,bounds:{minX:-57-2,maxX:-54+2,minY:2.5,maxY:7.5,minZ:7.75,maxZ:10.75},func:function(){
                 
                 let loots=''
-                loots+='royalJelly,'.repeat(65)
-                loots+='ticket,'.repeat(65)
-                loots+='gumdrops,'.repeat(65)
+                loots+='royalJelly,'.repeat(1)
+                loots+='ticket,'.repeat(30)
+                loots+='gumdrops,'.repeat(1)
                 loots+='moonCharm,'.repeat(45)
                 loots+='microConverter,'.repeat(29)
                 loots+='fieldDice,'.repeat(20)
@@ -2173,14 +2173,14 @@ function BeeSwarmSimulator(DATA){
                 loots+='blueExtract,'.repeat(15)
                 loots+='oil,'.repeat(15)
                 loots+='enzymes,'.repeat(15)
-                loots+='silverEgg,'.repeat(4)
-                loots+='purplePotion,'.repeat(4)
-                loots+='goldEgg,'.repeat(3)
-                loots+='festiveBean,'.repeat(3)
-                loots+='diamondEgg,'.repeat(2)
-                loots+='mythicEgg,'.repeat(1)
-                loots+='starTreat,'.repeat(1)
-                loots+='turpentine,'.repeat(1)
+                loots+='silverEgg,'.repeat(63)
+                loots+='purplePotion,'.repeat(66)
+                loots+='goldEgg,'.repeat(64)
+                loots+='festiveBean,'.repeat(70)
+                loots+='diamondEgg,'.repeat(65)
+                loots+='mythicEgg,'.repeat(70)
+                loots+='starTreat,'.repeat(70)
+                loots+='turpentine,'.repeat(70)
                 loots=loots.substring(0,loots.length-1).split(',')
 
                 let pp=[player.body.position.x,player.body.position.y,player.body.position.z]
@@ -2286,7 +2286,7 @@ function BeeSwarmSimulator(DATA){
                 player.addMessage(MATH.doTime(secs)+' of '+nt+' Nectar')
                 player.addEffect(nt.toLowerCase()+'Nectar',secs/(6*60*60))
                 
-                if(player.stats.withTheSamovar++===25){
+                if(true){
                     items.turpentine.amount++
                     player.updateInventory()
                     player.addMessage('+1 Turpentine (From Samovar)')
@@ -2296,9 +2296,9 @@ function BeeSwarmSimulator(DATA){
             {name:'gummyBeacon',npc:'gummyBear',cooldown:6*60*60,bounds:{minX:-25-2,maxX:-25+2,minY:10,maxY:15,minZ:4-2,maxZ:4+2},func:function(){
 
                 let r1=MATH.random(8,21)|0,r2=MATH.random(8,21)|0,r3=MATH.random(8,21)|0,p=[player.body.position.x,player.body.position.y+6,player.body.position.z]
-                objects.tempBees.push(new TempBee(p,'gummy',r1,60*10,false))
-                objects.tempBees.push(new TempBee(p,'gummy',r2,60*10,false))
-                objects.tempBees.push(new TempBee(p,'gummy',r3,60*10,false))
+                objects.tempBees.push(new TempBee(p,'gummy',r1,60*10,true))
+                objects.tempBees.push(new TempBee(p,'gummy',r2,60*10,true))
+                objects.tempBees.push(new TempBee(p,'gummy',r3,60*10,true))
 
                 player.addMessage('Summoned Gummy Bee (Level '+r1+')')
                 player.addMessage('Summoned Gummy Bee (Level '+r2+')')
@@ -2428,7 +2428,7 @@ function BeeSwarmSimulator(DATA){
         }
     }
     
-    if(testRealm){
+    if(true){
 
         triggers.become_attack_hive={
             
