@@ -21950,8 +21950,8 @@ function BeeSwarmSimulator(DATA){
         gummyBaller:{
             
             collectPattern:[[-3,-3],[-2,-5],[-2,-4],[-2,-3],[-2,-2],[-2,-1],[-1,-5],[-1,-4],[-1,-3],[-1,-2],[-1,-1],[0,-6],[0,-5],[0,-4],[0,-3],[0,-2],[0,-1],[0,0],[1,-5],[1,-4],[1,-3],[1,-2],[1,-1],[2,-5],[2,-4],[2,-3],[2,-2],[2,-1],[3,-3]],
-            collectAmount:25,
-            cooldown:0.7,
+            collectAmount:55,
+            cooldown:0.1,
             mesh:function(box,cylinder,sphere,star){
                 
                 cylinder(-0.4,-0.1,0.4,0.15,0.35,15,0.26,2.7,1.1,90,0,0,0.15)
@@ -21984,7 +21984,7 @@ function BeeSwarmSimulator(DATA){
                 
             },
             desc:'Absorb goo to conjure up a delectable arsenal of gummy wrecking balls. Cover the field in goo and collect pollen with a giant gummyball. Ricochet off Marks and Honey Tokens to build up your gummyball combo for massive gooey gains. Jump to release your gummyball prematurely in a field.',
-            cost:['1000 honey','50 glue','20 gumdrops','25 causticWax','5 turpentine']
+            cost:['1000 honey','1 glue','20 gumdrops','25 causticWax','5 turpentine']
         },
     }
 
@@ -27836,7 +27836,7 @@ function BeeSwarmSimulator(DATA){
                 name:'hiveSlot',
                 slot:'item',
                 viewMatrix:[-10,37,74,MATH.HALF_PI,0],
-                cost:[n=>Math.floor(Math.pow(1.375,n)*1000000)+' honey'],
+                cost:[n=>Math.floor(Math.pow(1.175,n)*2)+' honey'],
                 desc:'Increases the capacity of your hive, allowing you to hatch an additional bee!'
             }],
             currentIndex:0,message:'Explore Top Shop'
