@@ -7698,13 +7698,13 @@ function BeeSwarmSimulator(DATA){
 
         translator:{
             
-            amount:0,u:128*0/2048,v:128*0/2048,value:Infinity,
+            amount:3,u:128*0/2048,v:128*0/2048,value:Infinity,
             use:function(){}
         },
 
         spiritPetal:{
             
-            amount:0,u:128*0/2048,v:128*0/2048,value:Infinity,
+            amount:5,u:128*0/2048,v:128*0/2048,value:Infinity,
             use:function(){}
         },
 
@@ -8679,7 +8679,7 @@ function BeeSwarmSimulator(DATA){
 
         gumdrops:{
             
-            amount:0,u:128/2048,v:128*7/2048,cooldown:4,autoUse:true,value:5,
+            amount:5000,u:128/2048,v:128*7/2048,cooldown:4,autoUse:true,value:5,
             use:function(){
 
                 if(player.fieldIn){
@@ -28269,7 +28269,7 @@ function BeeSwarmSimulator(DATA){
                 name:'gumdrops',
                 slot:'item',
                 viewMatrix:[-28.5+5.5,4.5,46,-MATH.HALF_PI,0.02],
-                cost:[(n,i=3)=>(i/3)+' ticket'],
+                cost:[1+' ticket'],
                 desc:'Can be used to cover fields in goo, granting bonus honey!'
             }],
             currentIndex:0,message:'Explore Gumdrop Shop',currentIncrement:0,increments:[3,30,30e1]
