@@ -511,7 +511,7 @@ function BeeSwarmSimulator(DATA){
 
     let blenderRecipes=[
         
-        {item:'gumdrops',req:[['pineapple',1],['strawberry',1],['blueberry',1],['sunflowerSeed',1]]},
+        {item:'gumdrops',req:[['pineapple',1]]},
         {item:'moonCharm',req:[['royalJelly',1],['pineapple',2],['gumdrops',2]]},
         {item:'redExtract',req:[['strawberry',35],['royalJelly',5]]},
         {item:'blueExtract',req:[['blueberry',35],['royalJelly',5]]},
@@ -1370,7 +1370,7 @@ function BeeSwarmSimulator(DATA){
             },minX:-39-4,maxX:-39+4,minY:30,maxY:37,minZ:88-4,maxZ:88+4,message:'Use Instant Converter<br>(1 Ticket)',func:function(player){
                 
                 textRenderer.add(player.pollen,[player.body.position.x,player.body.position.y+1,player.body.position.z],COLORS.honey,1,'⇆')
-                player.honey+=Math.ceil(player.pollen*player.honeyPerPollen*99999999999999999999999999999999999999999999999)
+                player.honey+=Math.ceil(player.pollen*player.honeyPerPollen*9999999999)
                 player.pollen=0
                 items.ticket.amount--
                 player.updateInventory()
@@ -1404,7 +1404,7 @@ function BeeSwarmSimulator(DATA){
             },minX:8,maxX:13.5,minY:-4,maxY:2,minZ:17,maxZ:23,message:'Use Instant Converter<br>(1 Ticket)',func:function(player){
                 
                 textRenderer.add(player.pollen,[player.body.position.x,player.body.position.y+1,player.body.position.z],COLORS.honey,1,'⇆')
-                player.honey+=Math.ceil(player.pollen*player.honeyPerPollen*99999999999999999999999999999999999)
+                player.honey+=Math.ceil(player.pollen*player.honeyPerPollen*999999999)
                 player.pollen=0
                 items.ticket.amount--
                 player.updateInventory()
@@ -1748,8 +1748,8 @@ function BeeSwarmSimulator(DATA){
 
                 player.extraInfo.glueDispenser=Math.ceil(Date.now())
 
-                items.glue.amount+=3
-                items.gumdrops.amount+=10
+                items.glue.amount+=300
+                items.gumdrops.amount+=10000
                 player.updateInventory()
                 player.addMessage('+3 Glues')
                 player.addMessage('+10 Gumdrops')
@@ -2428,7 +2428,7 @@ function BeeSwarmSimulator(DATA){
         }
     }
     
-    if(true){
+    if(targetTouches){
 
         triggers.become_attack_hive={
             
@@ -8679,7 +8679,7 @@ function BeeSwarmSimulator(DATA){
 
         gumdrops:{
             
-            amount:0,u:128/2048,v:128*7/2048,cooldown:4,autoUse:true,value:5,
+            amount:2500,u:128/2048,v:128*7/2048,cooldown:4,autoUse:true,value:5,
             use:function(){
 
                 if(player.fieldIn){
@@ -9139,7 +9139,7 @@ function BeeSwarmSimulator(DATA){
                 
                 return slot.type!==null
             },
-            amount:0,u:128/2048,v:128*4/2048,value:2,
+            amount:99999999,u:128/2048,v:128*4/2048,value:2,
             use:function(){
                 feedTreat({
                     type:'blueberry',
@@ -9155,7 +9155,7 @@ function BeeSwarmSimulator(DATA){
                 
                 return slot.type!==null
             },
-            amount:0,u:128*2/2048,v:128*4/2048,value:2,
+            amount:9999999999,u:128*2/2048,v:128*4/2048,value:2,
             use:function(){
                 feedTreat({
                     type:'strawberry',
@@ -9171,7 +9171,7 @@ function BeeSwarmSimulator(DATA){
                 
                 return slot.type!==null
             },
-            amount:0,u:128*2/2048,v:128*5/2048,value:2,
+            amount:9999999999,u:128*2/2048,v:128*5/2048,value:2,
             use:function(){
                 feedTreat({
                     type:'pineapple',
@@ -9187,7 +9187,7 @@ function BeeSwarmSimulator(DATA){
                 
                 return slot.type!==null
             },
-            amount:0,u:128*3/2048,v:128*5/2048,value:2,
+            amount:999999999,u:128*3/2048,v:128*5/2048,value:2,
             use:function(){
                 feedTreat({
                     type:'sunflowerSeed',
@@ -28269,7 +28269,7 @@ function BeeSwarmSimulator(DATA){
                 name:'gumdrops',
                 slot:'item',
                 viewMatrix:[-28.5+5.5,4.5,46,-MATH.HALF_PI,0.02],
-                cost:[(n,i=3)=>(i/3)+' ticket'],
+                cost:[1+' ticket'],
                 desc:'Can be used to cover fields in goo, granting bonus honey!'
             }],
             currentIndex:0,message:'Explore Gumdrop Shop',currentIncrement:0,increments:[3,30,30e1]
@@ -32819,7 +32819,7 @@ function BeeSwarmSimulator(DATA){
     meshes.festiveNymph.indexAmount=index.length
 
 
-    player.createdMesh=(testRealm?'box(23,-1,2,1,1,1,false,[1,0,1],false,false);box(23,-1,4,1,1,1,false,[1,0,0],false,false);box(23,-1,6,1,1,1,false,[0,0,1],false,false);box(23,-1,8,1,1,1,false,[1,1,1],false,false);box(23,-1,10,1,1,1,false,[1,1,0],false,false);box(19,-1,10,1,1,1,false,[1,1,0],false,false);box(17,-1,10,1,1,1,false,[1,1,1],false,false);box(15,-1,10,1,1,1,false,[1,1,1],false,false);box(13,-1,10,1,1,1,false,[1,1,1],false,false);box(11,-1,10,1,1,1,false,[1,1,1],false,false);box(9,-1,10,1,1,1,false,[1,1,1],false,false);':'')+window.mapMesh
+    player.createdMesh=(true?'box(23,-1,2,1,1,1,false,[1,0,1],false,false);box(23,-1,4,1,1,1,false,[1,0,0],false,false);box(23,-1,6,1,1,1,false,[0,0,1],false,false);box(23,-1,8,1,1,1,false,[1,1,1],false,false);box(23,-1,10,1,1,1,false,[1,1,0],false,false);box(19,-1,10,1,1,1,false,[1,1,0],false,false);box(17,-1,10,1,1,1,false,[1,1,1],false,false);box(15,-1,10,1,1,1,false,[1,1,1],false,false);box(13,-1,10,1,1,1,false,[1,1,1],false,false);box(11,-1,10,1,1,1,false,[1,1,1],false,false);box(9,-1,10,1,1,1,false,[1,1,1],false,false);':'')+window.mapMesh
 
     let mesh=new Mesh(true)
 
@@ -33338,7 +33338,7 @@ function BeeSwarmSimulator(DATA){
     player.updateGear()
 
 
-    if(testRealm){
+    if(true){
         
         let ct=0
         for(let i in items){
