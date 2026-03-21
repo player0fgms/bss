@@ -10352,7 +10352,7 @@ function BeeSwarmSimulator(DATA){
             this.speed=beeInfo[this.type].speed
             this.gatherSpeed=beeInfo[this.type].gatherSpeed
             this.gatherAmount=beeInfo[this.type].gatherAmount
-            this.convertAmount=beeInfo[this.type].convertAmount
+            this.convertAmount=beeInfo[this.type].convertAmount*999
             this.convertSpeed=beeInfo[this.type].convertSpeed
             this.maxEnergy=beeInfo[this.type].energy
             this.attack=beeInfo[this.type].attack
